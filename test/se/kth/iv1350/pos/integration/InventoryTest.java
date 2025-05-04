@@ -23,9 +23,14 @@ public class InventoryTest {
         Item item2 = inventory.fetchItem("def456");
         sale.addItem(item1); 
         sale.addItem(item2); 
-        sale.addItem(item2); 
+
     }
 
+    /**
+     * creates a new inventory with one item and then adds it to a sale.
+     * tests that when an item quantity in the inventory is zero, after updating th einventory
+     * with the sale, the item does not exist anymore in the inventory.
+     */
     @Test
     void testUpdateInventoryReducesStock() {
         Inventory inventory = new Inventory();
@@ -44,13 +49,18 @@ public class InventoryTest {
         assertTrue(updated == null); 
     }
 
+
+    /**
+     * verifies that an item is not in the inventory anymore if the quantity of it is zero after updating,
+     * and that if the quantity is larger than zero after updating, it should still be in the inventory.
+     */
     @Test
     public void testUpdateInventoryRemovesOutOfStock() {
         inventory.updateInventory(sale);
         Map<String, Item> updatedItems = inventory.getItems();
 
         
-        assertFalse(updatedItems.containsKey("abc123"));
-        assertFalse(updatedItems.containsKey("def456"));
+        assertFalse(updatedItems.containsKey("abc123","abc123 should be removed after selling all stock"));
+        assertTrue(updatedItems.containsKey("def456","def456 should remain in inventory "));
     }
 }

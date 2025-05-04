@@ -11,32 +11,50 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import se.kth.iv1350.pos.controller.*;
 import se.kth.iv1350.pos.model.*;
+/**
+ * tests the controller
+ */
 public class ControllerTest {
     private Controller controller;
 
+    /**
+     * sets up controller and starts the sale.
+     */
     @BeforeEach
     void setUp() {
         controller = new Controller();
         controller.startSale();
     }
 
+    /**
+     * tests that the cost of the sale is zero before any items have been added
+     */
     @Test
     void testStartOfSaleTotalCost() {
         double totalCost = controller.getTotalCost();
         assertEquals(0.00, totalCost, "Total cost should be 0.00 before any items have been added");
     }
+    /**
+     * tests that when a valid item ID has been added, the getItemID does not return null
+     */
     @Test
     void testEnterValidItemID() {
         Item item = controller.enterItemID("abc123");
         assertNotNull(item.getItemID(), "The returned item should have the corect ID");
         
     }
+    /**
+     * tests that when an invalid item ID is entered, the output is null
+     */
     @Test
     void testenterInvalidItemID() {
         Item item = controller.enterItemID("saw445");
         assertNull(item, "The returned item should be null");
     }
-    
+    /**
+     * tests that the saleDTO is not null whne an item has been added and that it contains
+     * the correct item.
+     */
     @Test
     void testGetSaleInfoReturnsCorrectDTO() {
         controller.enterItemID("abc123");
