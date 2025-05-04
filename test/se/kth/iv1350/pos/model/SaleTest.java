@@ -12,8 +12,9 @@ import se.kth.iv1350.pos.model.Sale;
  */
 public class SaleTest {
     /**
-     * Tests that adding an item to a sale works
-     */
+    * tests that an item added to a sale is correctly stored in the list of sold items 
+    * and verifies both the presence of the item and that only one item has been added.
+    */
     @Test
     void testAddItemToSale() {
         Sale sale = new Sale();
