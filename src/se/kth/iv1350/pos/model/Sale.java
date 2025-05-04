@@ -51,16 +51,6 @@ public class Sale {
 
         calculateTotal();
 
-        System.out.println("Item ID: " + item.getItemID());
-        System.out.println("Item name: " + item.getName());
-        System.out.println("Item cost: " + item.getPrice());
-        System.out.println("VAT: " + String.format("%.0f%%", item.getVat() * 100));
-        System.out.println("Item Description: " + item.getItemDescription());
-        
-
-
-        System.out.println("Total Cost (Including VAT): " + String.format("%.2f", totalCost) + "SEK");
-        System.out.println("Total VAT: " + String.format("%.2f", totalVat) + "SEK");
 
    
     }
@@ -109,8 +99,8 @@ public class Sale {
     }
 
     /**
-     * 
-     * @return
+     * The saleDTO that belongs to this sale.
+     * @return the saleDTO with all the current information from the sale
      */
     public SaleDTO getSaleDTO() {
         Map<String, ItemDTO> itemDTOs = new LinkedHashMap<>();

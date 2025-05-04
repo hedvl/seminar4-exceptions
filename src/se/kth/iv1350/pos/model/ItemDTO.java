@@ -11,6 +11,15 @@ public class ItemDTO {
     private double vat;
     private int quantity;
 
+    /**
+     * The ItemDTO for a particular sale with all its qualities.
+     * @param itemID the ID of the item
+     * @param name the name of the item
+     * @param itemDescription the description
+     * @param price the price of the item
+     * @param vat the VAT rate of the item
+     * @param quantity the quantity of the item being bought
+     */
     public ItemDTO(String itemID, String name, String itemDescription, 
     double price, double vat, double quantity) {
         this.itemID = itemID;

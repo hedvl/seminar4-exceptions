@@ -13,7 +13,7 @@ public class ItemTest {
 
     /**
      * Tets that when an item has been created, the information of the getters 
-     * gives the right information about the items different qualities.
+     * gives the right information about the items different qualities of the item.
      */
     @Test
     void testItemCreation() {

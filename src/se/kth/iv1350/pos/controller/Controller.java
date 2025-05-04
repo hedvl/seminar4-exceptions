@@ -2,6 +2,7 @@ package se.kth.iv1350.pos.controller;
 
 import se.kth.iv1350.pos.model.*;
 import se.kth.iv1350.pos.integration.*;
+import se.kth.iv1350.pos.view.View;
 
 /**
  * This is the application's controller. 
@@ -12,12 +13,18 @@ public class Controller {
     private Printer printer = new Printer();
     private Register register = new Register();
     private Accounting accounting = new Accounting();
-
+    private Receipt receipt;
+    private Payment payment; 
+   
+    
+  
     /**
-     * Creates an instance of the controller with an inventory.
+     * Creates an instance of the controller with an inventory and a view.
      */
     public Controller() {
         this.inventory = new Inventory();
+    
+        
     }
 
     /**
@@ -35,34 +42,35 @@ public class Controller {
     public Item enterItemID(String itemID) {
         Item item = inventory.fetchItem(itemID);
         if (item != null) {
-            System.out.println("Add 1 item with item id " + itemID + ":");
             sale.addItem(item);
-            return item;
-        }         
-        System.out.println("Invalid item ID, " + itemID + " is not in the system.");
+            return item; 
+        }
         return null;
     }
+
 
     /**
      * Completes the sale by processing the payment, updating register, inventory & accounting systems
      * with the payment and printing the receipt.
      * @param amountPaid
      */
-    public void enterAmountPaid(double amountPaid) {
-        Payment payment = new Payment(amountPaid, sale.getTotalCost());
-        
+    public Payment enterAmountPaid(double amountPaid) {
+        payment = new Payment(amountPaid, sale.getTotalCost());
+
         register.updateRegister(amountPaid);
         inventory.updateInventory(sale);
         accounting.updateAccounting(payment);
 
-        Receipt receipt = new Receipt(sale, payment);
-        printer.printReceipt(receipt);
-        System.out.println("Change to give to customer: " + String.format("%.2f", payment.getChangeAmount()) + " SEK");
+        receipt = new Receipt(sale, payment);
+        printer.createReceipt(receipt);
+        
+        return payment; 
+        
     }
 
     /**
      * Returns a DTO representation of the current sale
-     * Useful for the view or printing receipt.
+     * useful for the view or printing receipt.
      * @return The current sale as a SaleDTO.
      */
     public SaleDTO getSaleDetails() {
@@ -77,4 +85,27 @@ public class Controller {
         return sale.getTotalCost();
     }
 
+    /**
+     * Getter of VAT rate
+     * @return the total VAT rate of the sale
+     */
+    public double getTotalVat() {
+        return sale.getTotalVat();
+    }
+
+    public double getChangeAmount() {
+        if (payment == null) {
+            System.out.println("Error: Payment is null. Can't calculate change.");
+            return 0.0; 
+        }
+        return payment.getChangeAmount();
+    }
+
+    /**
+     * Generates and returns the receipt string.
+     * @return A formatted receipt string to be printed by the View.
+     */
+    public String getReceiptString() {
+        return printer.createReceipt(receipt);
+    }
 }
