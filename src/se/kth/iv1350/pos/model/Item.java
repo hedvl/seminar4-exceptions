@@ -58,6 +58,10 @@ public class Item {
         return quantity;
     }
 
+    public ItemDTO itemToItemDTO() {
+        return new ItemDTO(itemID, name, itemDescription, price, vat, quantity);
+    }
+
     /**
      * increases the quantity of items with a particular item ID.
      * @param amount the amount of that item that are to be sold.
@@ -81,6 +85,7 @@ public class Item {
     public double totalVatAmount() {
         return price * quantity * vat;
     }
+
 
 
 

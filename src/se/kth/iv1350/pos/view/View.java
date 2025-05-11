@@ -39,7 +39,7 @@ public class View {
         System.out.println("End sale :");
         
         contr.enterAmountPaid(100);
-        printReceipt();
+        //printReceipt();
         showChange();
         
     }
@@ -50,7 +50,7 @@ public class View {
      * @param itemID the ID of the item being scanned.
      */
     public void addItem(String itemID) {
-        Item item = contr.enterItemID(itemID);
+        ItemDTO item = contr.enterItemID(itemID);
         if (item != null) {
             
             System.out.println("Add 1 item with item id " + item.getItemID() + ":");
@@ -71,11 +71,12 @@ public class View {
         System.out.println("Change to give to customer: " + String.format("%.2f", contr.getChangeAmount()) + " SEK");
     }
 
+    /* 
     private void printReceipt () {
         System.out.println(contr.getReceiptString());
     }
 
-
+*/
 
 }
     

@@ -37,16 +37,15 @@ public class Controller {
     /**
      * Finds the scanned item in the inventory and adds it to the sale if it exists.
      * @param itemID the ID of the item that has been scanned and is to be bought.
-     * @return returns the item
+     * @return returns the itemDTO representing the item
      */
-    public Item enterItemID(String itemID) {
+    public ItemDTO enterItemID(String itemID){
         Item item = inventory.fetchItem(itemID);
-        if (item != null) {
-            sale.addItem(item);
-            return item; 
-        }
-        return null;
+ 
+        sale.addItem(item);
+        return item.itemToItemDTO();
     }
+
 
 
     /**
@@ -62,7 +61,7 @@ public class Controller {
         accounting.updateAccounting(payment);
 
         receipt = new Receipt(sale, payment);
-        printer.createReceipt(receipt);
+        printer.printReceipt(receipt);
         
         return payment; 
         
@@ -101,11 +100,4 @@ public class Controller {
         return payment.getChangeAmount();
     }
 
-    /**
-     * Generates and returns the receipt string.
-     * @return A formatted receipt string to be printed by the View.
-     */
-    public String getReceiptString() {
-        return printer.createReceipt(receipt);
-    }
 }
