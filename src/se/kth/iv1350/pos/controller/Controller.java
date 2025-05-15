@@ -1,8 +1,13 @@
 package se.kth.iv1350.pos.controller;
 
 import se.kth.iv1350.pos.model.*;
+import se.kth.iv1350.pos.view.TotalRevenueView;
 import se.kth.iv1350.pos.integration.*;
-import se.kth.iv1350.pos.view.View;
+
+import se.kth.iv1350.pos.integration.ItemNotFoundException;
+import se.kth.iv1350.pos.integration.InventoryDatabaseException;
+import se.kth.iv1350.pos.integration.ErrorLogger;
+
 
 /**
  * This is the application's controller. 
@@ -16,8 +21,14 @@ public class Controller {
     private Receipt receipt;
     private Payment payment; 
    
+    private final TotalRevenueView totalRevenueView = new TotalRevenueView();
+    private final TotalRevenueFileOutput totalRevenueFileOutput = new TotalRevenueFileOutput();
     
-  
+    private void attachObserversToPayment(Payment payment) {
+        payment.addPaymentObserver(totalRevenueView);
+        payment.addPaymentObserver(totalRevenueFileOutput);
+    
+    }
     /**
      * Creates an instance of the controller with an inventory and a view.
      */
@@ -39,34 +50,60 @@ public class Controller {
      * @param itemID the ID of the item that has been scanned and is to be bought.
      * @return returns the itemDTO representing the item
      */
-    public ItemDTO enterItemID(String itemID){
+    public ItemDTO enterItemID(String itemID) throws ItemNotFoundException, 
+    InventoryDatabaseException {
+        try {
         Item item = inventory.fetchItem(itemID);
- 
+        
+            item.setQuantity(1); 
+        
+        
         sale.addItem(item);
         return item.itemToItemDTO();
+        } catch (ItemNotFoundException e) {
+            System.out.println("INVENTORY ERROR" + e.getMessage());
+            throw e;
+        } catch (InventoryDatabaseException e) {
+            System.out.println("DATABASE ERROR: " + e.getMessage());
+            throw e;
+        } 
     }
 
 
 
     /**
-     * Completes the sale by processing the payment, updating register, inventory & accounting systems
+     * Completes the sale by processing the payment, updating systems
      * with the payment and printing the receipt.
-     * @param amountPaid
+     * @param amountPaid the amount that has been paid.
      */
     public Payment enterAmountPaid(double amountPaid) {
         payment = new Payment(amountPaid, sale.getTotalCost());
 
-        register.updateRegister(amountPaid);
-        inventory.updateInventory(sale);
-        accounting.updateAccounting(payment);
+        updateExternalSystems(payment);
 
-        receipt = new Receipt(sale, payment);
-        printer.printReceipt(receipt);
+        attachObserversToPayment(payment);
+        payment.notifyObservers();
+
+        createndPrintReceipt(sale, payment);
         
         return payment; 
         
     }
 
+    private void createndPrintReceipt (Sale sale, Payment payment) {
+        receipt = new Receipt(sale, payment);
+        printer.printReceipt(receipt);
+    }
+
+    private void updateExternalSystems(Payment payment) {
+
+        register.updateRegister(payment.getAmountPaid());
+        inventory.updateInventory(sale);
+        accounting.updateAccounting(payment);
+    }
+ 
+
+        
     /**
      * Returns a DTO representation of the current sale
      * useful for the view or printing receipt.
@@ -93,10 +130,7 @@ public class Controller {
     }
 
     public double getChangeAmount() {
-        if (payment == null) {
-            System.out.println("Error: Payment is null. Can't calculate change.");
-            return 0.0; 
-        }
+
         return payment.getChangeAmount();
     }
 

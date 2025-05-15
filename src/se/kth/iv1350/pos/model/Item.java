@@ -85,7 +85,13 @@ public class Item {
     public double totalVatAmount() {
         return price * quantity * vat;
     }
-
+    /**
+     * set the quantity of the item to what it should be. 
+     * @param quantity
+     */
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
 
 

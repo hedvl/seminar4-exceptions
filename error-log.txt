@@ -1,0 +1,129 @@
+[2025-05-15T12:27:36.212786600] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:53)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:27:36.221503900] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:53)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:28:31.768452500] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+	at se.kth.iv1350.pos.model.Sale.addItem(Sale.java:44)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:54)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:28:31.778426200] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+	at se.kth.iv1350.pos.model.Sale.addItem(Sale.java:44)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:54)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:28:31.979789300] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+	at se.kth.iv1350.pos.model.Sale.addItem(Sale.java:44)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:54)
+	at se.kth.iv1350.pos.view.View.addItem(View.java:80)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:65)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:28:38.942065100] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:53)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:28:38.965478300] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:53)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:32:40.024999700] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+	at se.kth.iv1350.pos.model.Sale.addItem(Sale.java:44)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:32:40.049263400] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.getItemID()" because "item" is null
+	at se.kth.iv1350.pos.model.Sale.addItem(Sale.java:44)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:40:29.501353900] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:53)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:40:29.508339400] ERROR: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.pos.model.Item.setQuantity(int)" because "item" is null
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:53)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:58:59.039359300] ERROR: Item with ID 'Item ID invalidID was not found.' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'Item ID invalidID was not found.' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:58:59.059873800] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:59:38.518818300] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T12:59:38.533778900] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T13:00:48.905098900] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T13:00:48.915072300] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:40)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T13:37:19.454914900] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T13:37:19.464888900] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T13:40:18.647772800] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-15T13:40:18.665732700] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)

@@ -21,23 +21,26 @@ public class Inventory {
      */
     public Inventory() {
         items.put("abc123", new Item("abc123", "BigWheel Oatmeal", 
-        "BigWheel Oatleam 500ml, whole grain oats, high fiber, gluten free", 29.90, 0.06, 1));
-        items.put("def456", new Item("def456","YouGOGo Bluebuerry", 
-        "YouGoGo Blueberry 240g, low sugar, blueberry flavor yoghurt", 14.90, 0.06, 1));
+        "BigWheel Oatmeal 500ml, whole grain oats, high fiber, gluten free", 29.90, 0.06, 5));
+        items.put("def456", new Item("def456","YouGOGo Bluebuerry",
+        "YouGoGo Blueberry 240g, low sugar, blueberry flavor yoghurt", 14.90, 0.06, 5));
     }
     /**
      * fetches the item information belonging to the itemID from the Item class.
      * @param itemID the ID of the scanned item.
      * @return either returns a new Item or null if the item ID is invalid.
      */
-    public Item fetchItem(String itemID) {
+    public Item fetchItem(String itemID) throws ItemNotFoundException, InventoryDatabaseException {
+        if ("failDB".equals(itemID)) {
+            throw new InventoryDatabaseException("Simulated database connection failure.");
+        }
         Item item = items.get(itemID);
         if (item != null) {
             return new Item(item.getItemID(), item.getName(), item.getItemDescription(), 
             item.getPrice(), item.getVat(), item.getQuantity());
             
         }
-        return null;
+        throw new ItemNotFoundException(itemID);
     }
 
     /**
