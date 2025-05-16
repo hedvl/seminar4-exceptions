@@ -52,21 +52,21 @@ public class Controller {
      */
     public ItemDTO enterItemID(String itemID) throws ItemNotFoundException, 
     InventoryDatabaseException {
-        try {
+        //try {
         Item item = inventory.fetchItem(itemID);
         
-            item.setQuantity(1); 
+        item.setQuantity(1); 
         
         
         sale.addItem(item);
         return item.itemToItemDTO();
-        } catch (ItemNotFoundException e) {
-            System.out.println("INVENTORY ERROR" + e.getMessage());
-            throw e;
-        } catch (InventoryDatabaseException e) {
-            System.out.println("DATABASE ERROR: " + e.getMessage());
-            throw e;
-        } 
+        //} catch (ItemNotFoundException e) {
+          //  System.out.println("INVENTORY ERROR" + e.getMessage());
+         //   throw e;
+       // } catch (InventoryDatabaseException e) {
+         //   System.out.println("DATABASE ERROR: " + e.getMessage());
+          //  throw e;
+       // } 
     }
 
 
@@ -84,13 +84,19 @@ public class Controller {
         attachObserversToPayment(payment);
         payment.notifyObservers();
 
-        createndPrintReceipt(sale, payment);
-        
+        if (sale.getSoldItems().isEmpty() == false) {
+            createAndPrintReceipt(sale, payment);
+            
+        }
+
         return payment; 
+        
+        
+        
         
     }
 
-    private void createndPrintReceipt (Sale sale, Payment payment) {
+    private void createAndPrintReceipt (Sale sale, Payment payment) {
         receipt = new Receipt(sale, payment);
         printer.printReceipt(receipt);
     }

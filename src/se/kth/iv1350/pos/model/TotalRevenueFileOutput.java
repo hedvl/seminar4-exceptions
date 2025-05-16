@@ -32,7 +32,7 @@ public class TotalRevenueFileOutput implements PaymentObserver {
      */
     public void newPayment(Payment payment) {
         totalRevenue += payment.getAmountPaid() - payment. getChangeAmount();
-        log("Total Revenue For this Instances: " + String.format("%.2f",totalRevenue) + "SEK");
+        log("Total Revenue For this Instance: " + String.format("%.2f",totalRevenue) + "SEK");
     }
 
     private void log (String message) {

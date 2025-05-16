@@ -127,3 +127,171 @@ se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database con
 	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
 	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
 	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T12:51:59.320556300] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T12:51:59.340386700] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T12:52:38.703288200] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T12:52:38.715716300] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T12:53:41.425917] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T12:53:41.447039600] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:28:19.514032800] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:28:19.541808600] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:28:19.552432900] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:34:01.043053600] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:34:01.066282100] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:34:01.075739100] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:41:20.322200700] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:41:20.365532400] ERROR: Item with ID 'notanid' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'notanid' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:41:20.376560500] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:45:02.944571600] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:45:03.019255200] ERROR: Item with ID 'notanid' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'notanid' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:45:03.023912800] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:45:45.680285500] ERROR: Item with ID 'invalidID' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'invalidID' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:45:45.702226900] ERROR: Item with ID 'notanid' was not found in the inventory.
+se.kth.iv1350.pos.integration.ItemNotFoundException: Item with ID 'notanid' was not found in the inventory.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:43)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)
+[2025-05-16T13:45:45.704221300] ERROR: Simulated database connection failure.
+se.kth.iv1350.pos.integration.InventoryDatabaseException: Simulated database connection failure.
+	at se.kth.iv1350.pos.integration.Inventory.fetchItem(Inventory.java:35)
+	at se.kth.iv1350.pos.controller.Controller.enterItemID(Controller.java:56)
+	at se.kth.iv1350.pos.view.View.scanAndAddItem(View.java:63)
+	at se.kth.iv1350.pos.view.View.simulateSale(View.java:45)
+	at se.kth.iv1350.pos.view.View.runFakeExecution(View.java:34)
+	at se.kth.iv1350.pos.startup.Main.main(Main.java:19)

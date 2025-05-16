@@ -31,8 +31,8 @@ public class View {
      */
     public void runFakeExecution() {
 
-        simulateSale(new String[]{"abc123","invalidID","failDB"}, 100);
-        simulateSale(new String[]{"def456"}, 50);
+        simulateSale(new String[]{"invalidID","notanid","failDB"}, 100);
+        simulateSale(new String[]{"def456", "def456"}, 200);
 
     }
 
@@ -88,6 +88,7 @@ public class View {
     
 
     private void showChange() {
+        
         System.out.println("Change to give to customer: " + String.format("%.2f", contr.getChangeAmount()) + " SEK");
     }
 
