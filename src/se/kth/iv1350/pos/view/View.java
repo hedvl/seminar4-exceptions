@@ -32,7 +32,7 @@ public class View {
     public void runFakeExecution() {
 
         simulateSale(new String[]{"invalidID","notanid","failDB"}, 100);
-        simulateSale(new String[]{"def456", "def456"}, 200);
+        simulateSale(new String[]{"def456", "def456", "abc123"}, 200);
 
     }
 
@@ -45,9 +45,21 @@ public class View {
             scanAndAddItem(itemID);
         }
 
-        System.out.println("END SALE");
-        contr.enterAmountPaid(amountPaid);
-        showChange();
+        if (contr.hasValidItems()) {
+            try {
+              System.out.println("END SALE");
+                contr.enterAmountPaid(amountPaid);  
+            }
+            catch(Exception e) {
+                System.out.println("Error: " + e.getMessage);
+            }
+            
+            showChange();
+        }
+        else {
+            System.out.println("Sale unsuccessful: No items have been bought.");
+        }
+        
 
 
     }

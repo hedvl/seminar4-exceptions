@@ -117,5 +117,10 @@ public class Sale {
         }
         return new SaleDTO(totalCost, totalVat, itemDTOs, timeOfSaleFormatted);
     }
-}
+
+
+    public boolean hasValidItems() {
+        return !soldItems.isEmpty();
+    }
     
+}

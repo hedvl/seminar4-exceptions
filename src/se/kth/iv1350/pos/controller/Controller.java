@@ -84,7 +84,7 @@ public class Controller {
         attachObserversToPayment(payment);
         payment.notifyObservers();
 
-        if (sale.getSoldItems().isEmpty() == false) {
+        if (hasValidItems()) {
             createAndPrintReceipt(sale, payment);
             
         }
@@ -138,6 +138,10 @@ public class Controller {
     public double getChangeAmount() {
 
         return payment.getChangeAmount();
+    }
+
+    public boolean hasValidItems() {
+        return sale.hasValidItems();
     }
 
 }

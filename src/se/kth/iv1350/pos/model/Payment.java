@@ -42,20 +42,26 @@ public class Payment {
     }
 
 
-
+    /**
+     * Notifies the observers that a new payment has been made
+     */
     public void notifyObservers() {
         for (PaymentObserver obs : paymentObservers) {
             obs.newPayment(this);
         }
     }
 
+    /**
+     * adds an observer that can be notified when a payment is made
+     * @param obs the observer to be added.
+     */
     public void addPaymentObserver(PaymentObserver obs) {
         paymentObservers.add(obs);
     }
 
     /**
-     * Notifies all observers of a
-     * @param observers
+     * Adds all observers in a list of observers so that they can be notified when a sale is made.
+     * @param observers the observers to be added.
      */
     public void addPaymentObservers(List<PaymentObserver> observers) {
         paymentObservers.addAll(observers);
