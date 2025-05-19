@@ -28,7 +28,8 @@ public class TotalRevenueFileOutput implements PaymentObserver {
     }
 
     /**
-     * 
+     * creates a new payment to be added to the total revenue
+     * @param payment the payment to be added.
      */
     public void newPayment(Payment payment) {
         totalRevenue += payment.getAmountPaid() - payment. getChangeAmount();
