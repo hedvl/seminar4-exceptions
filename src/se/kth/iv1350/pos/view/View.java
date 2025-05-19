@@ -31,8 +31,8 @@ public class View {
      */
     public void runFakeExecution() {
 
-        simulateSale(new String[]{"invalidID","def456","abc123"}, 100);
-        simulateSale(new String[]{"def456", "def456", "abc123"}, 200);
+        simulateSale(new String[]{"invalidID","failDB","abc123"}, 40);
+        simulateSale(new String[]{"def456", "def456", "invalidID"}, 200);
 
     }
 
@@ -84,7 +84,7 @@ public class View {
             System.out.println("Inventory error:" + e.getMessage());
             logger.logException(e);
         } catch (OperationFailedException e) {
-            System.out.println("Technical error: Could not retrieve item." + e.getMessage());
+            System.out.println("Technical error: " + e.getMessage());
             logger.logException(e);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
