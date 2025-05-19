@@ -45,14 +45,15 @@ public class Controller {
         sale = new Sale();
     }
 
+
     /**
      * Finds the scanned item in the inventory and adds it to the sale if it exists.
      * @param itemID the ID of the item that has been scanned and is to be bought.
      * @return returns the itemDTO representing the item
      */
     public ItemDTO enterItemID(String itemID) throws ItemNotFoundException, 
-    InventoryDatabaseException {
-        //try {
+    OperationFailedException {
+        try {
         Item item = inventory.fetchItem(itemID);
         
         item.setQuantity(1); 
@@ -60,13 +61,12 @@ public class Controller {
         
         sale.addItem(item);
         return item.itemToItemDTO();
-        //} catch (ItemNotFoundException e) {
-          //  System.out.println("INVENTORY ERROR" + e.getMessage());
-         //   throw e;
-       // } catch (InventoryDatabaseException e) {
-         //   System.out.println("DATABASE ERROR: " + e.getMessage());
-          //  throw e;
-       // } 
+        } catch (InventoryDatabaseException e) 
+        {
+            throw new OperationFailedException("Could not retrieve item", e);
+            
+            }
+
     }
 
 

@@ -3,7 +3,7 @@ package se.kth.iv1350.pos.view;
 
 
 import se.kth.iv1350.pos.controller.Controller;
-
+import se.kth.iv1350.pos.controller.OperationFailedException;
 import se.kth.iv1350.pos.model.ItemDTO;
 import se.kth.iv1350.pos.integration.ItemNotFoundException;
 import se.kth.iv1350.pos.integration.InventoryDatabaseException;
@@ -31,7 +31,7 @@ public class View {
      */
     public void runFakeExecution() {
 
-        simulateSale(new String[]{"invalidID","notanid","failDB"}, 100);
+        simulateSale(new String[]{"invalidID","def456","abc123"}, 100);
         simulateSale(new String[]{"def456", "def456", "abc123"}, 200);
 
     }
@@ -46,13 +46,10 @@ public class View {
         }
 
         if (contr.hasValidItems()) {
-            try {
-              System.out.println("END SALE");
-                contr.enterAmountPaid(amountPaid);  
-            }
-            catch(Exception e) {
-                System.out.println("Error: " + e.getMessage);
-            }
+            
+            System.out.println("END SALE");
+            contr.enterAmountPaid(amountPaid);  
+
             
             showChange();
         }
@@ -86,11 +83,11 @@ public class View {
         } catch (ItemNotFoundException e) {
             System.out.println("Inventory error:" + e.getMessage());
             logger.logException(e);
-        } catch (InventoryDatabaseException e) {
-            System.out.println("DATABASE ERROR: " + e.getMessage());
+        } catch (OperationFailedException e) {
+            System.out.println("Technical error: Could not retrieve item." + e.getMessage());
             logger.logException(e);
         } catch (Exception e) {
-            System.out.println("ERROR: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             logger.logException(e);
         }
         

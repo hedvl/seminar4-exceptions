@@ -58,6 +58,10 @@ public class Item {
         return quantity;
     }
 
+    /**
+     * creates an ItemDTO
+     * @return the ItemDTO of the item
+     */
     public ItemDTO itemToItemDTO() {
         return new ItemDTO(itemID, name, itemDescription, price, vat, quantity);
     }
