@@ -32,7 +32,7 @@ public class TotalRevenueFileOutput implements PaymentObserver {
      * @param payment the payment to be added.
      */
     public void newPayment(Payment payment) {
-        totalRevenue += payment.getAmountPaid() - payment. getChangeAmount();
+        totalRevenue += payment.getTotalCost();
         log("Total Revenue For this Instance: " + String.format("%.2f",totalRevenue) + "SEK");
     }
 

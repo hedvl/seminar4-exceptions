@@ -19,7 +19,7 @@ public class TotalRevenueView implements PaymentObserver {
 
     @Override
     public void newPayment(Payment payment) {
-        totalRevenue += payment.getAmountPaid() - payment.getChangeAmount();
+        totalRevenue += payment.getTotalCost();
         printTotalCostsForAllSales();
     }
 

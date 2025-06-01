@@ -21,14 +21,8 @@ public class Controller {
     private Receipt receipt;
     private Payment payment; 
    
-    private final TotalRevenueView totalRevenueView = new TotalRevenueView();
-    private final TotalRevenueFileOutput totalRevenueFileOutput = new TotalRevenueFileOutput();
-    
-    private void attachObserversToPayment(Payment payment) {
-        payment.addPaymentObserver(totalRevenueView);
-        payment.addPaymentObserver(totalRevenueFileOutput);
-    
-    }
+
+
     /**
      * Creates an instance of the controller with an inventory and a view.
      */
@@ -45,11 +39,12 @@ public class Controller {
         sale = new Sale();
     }
 
-
     /**
      * Finds the scanned item in the inventory and adds it to the sale if it exists.
      * @param itemID the ID of the item that has been scanned and is to be bought.
      * @return returns the itemDTO representing the item
+     * @throws ItemNotFoundException of the item is not found in the inventory
+     * @throws OperationFailedException if an unexpected error occurs like a database failure.
      */
     public ItemDTO enterItemID(String itemID) throws ItemNotFoundException, 
     OperationFailedException {
@@ -81,8 +76,7 @@ public class Controller {
 
         updateExternalSystems(payment);
 
-        attachObserversToPayment(payment);
-        payment.notifyObservers();
+        
 
         if (hasValidItems()) {
             createAndPrintReceipt(sale, payment);

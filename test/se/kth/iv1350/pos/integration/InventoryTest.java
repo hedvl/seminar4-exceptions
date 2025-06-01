@@ -39,7 +39,7 @@ public class InventoryTest {
     
         Sale sale = new Sale();
         sale.addItem(new Item("abc123", "BigWheel Oatmeal", 
-            "BigWheel Oatleam 500ml, whole grain oats, high fiber, gluten free", 
+            "BigWheel Oatmeal 500ml, whole grain oats, high fiber, gluten free", 
             29.90, 0.06, 1));
     
         inventory.updateInventory(sale);
@@ -60,7 +60,24 @@ public class InventoryTest {
         Map<String, Item> updatedItems = inventory.getItems();
 
         
-        assertFalse(updatedItems.containsKey("abc123","abc123 should be removed after selling all stock"));
+        assertFalse(updatedItems.containsKey("abc123"),"abc123 should be removed after selling all stock");
         assertTrue(updatedItems.containsKey("def456","def456 should remain in inventory "));
+    }
+
+
+    @Test
+    void testItemNotFoundExceptionIsThrown() {
+        assertThrows(ItemNotFoundException.class, () -> 
+        {
+            inventory.fetchItem("invalidID");
+        });
+    }
+
+    @Test
+    void testInventoryDatabaseExceptionIsThrown() {
+        assertThrows(InventoryDatabaseException.class, () -> 
+        {
+            inventory.fetchItem("failDB");
+        });
     }
 }

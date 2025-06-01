@@ -26,9 +26,12 @@ public class Inventory {
         "YouGoGo Blueberry 240g, low sugar, blueberry flavor yoghurt", 14.90, 0.06, 5));
     }
     /**
+     *   
      * fetches the item information belonging to the itemID from the Item class.
      * @param itemID the ID of the scanned item.
-     * @return either returns a new Item or null if the item ID is invalid.
+     * @return the item matching the ID.
+     * @throws ItemNotFoundException if the itemID is not found in the inventory 
+     * @throws InventoryDatabaseException if there is a (simulated) database error.
      */
     public Item fetchItem(String itemID) throws ItemNotFoundException, InventoryDatabaseException {
         if ("failDB".equals(itemID)) {

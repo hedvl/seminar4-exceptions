@@ -3,6 +3,9 @@ package se.kth.iv1350.pos.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import se.kth.iv1350.pos.view.TotalRevenueView;
+import se.kth.iv1350.pos.model.TotalRevenueFileOutput;
+
 /**
  * Describes a payment made in a sale.
  */
@@ -12,6 +15,10 @@ public class Payment {
     private double amountPaid;
     private double totalCost;
     private List<PaymentObserver> paymentObservers= new ArrayList<>(); 
+
+    private final TotalRevenueView totalRevenueView = new TotalRevenueView();
+    private final TotalRevenueFileOutput totalRevenueFileOutput = new TotalRevenueFileOutput();
+    
 
     /**
      * Creates a payment for the particular instance.
@@ -31,17 +38,23 @@ public class Payment {
     public double getAmountPaid() {
         return amountPaid;
     }
-
+    public void completePayment(){
+        attachObserversToPayment(this);
+        notifyObservers();
+     }
 
     /**
      * 
      * @return the amount of change the customer should get back.
      */
     public double getChangeAmount() {
+        completePayment();
         return amountPaid - totalCost;
     }
 
-
+    public double getTotalCost() {
+        return totalCost;
+    }
 
 
 
@@ -69,5 +82,10 @@ public class Payment {
     public void addPaymentObservers(List<PaymentObserver> observers) {
         paymentObservers.addAll(observers);
     }
+    private void attachObserversToPayment(Payment payment) {
+            addPaymentObserver(totalRevenueView);
+            addPaymentObserver(totalRevenueFileOutput);
+            
+        }
+}    
 
-}
