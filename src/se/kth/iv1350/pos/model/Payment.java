@@ -14,11 +14,10 @@ public class Payment {
 
     private double amountPaid;
     private double totalCost;
-    private List<PaymentObserver> paymentObservers= new ArrayList<>(); 
-
-    private final TotalRevenueView totalRevenueView = new TotalRevenueView();
-    private final TotalRevenueFileOutput totalRevenueFileOutput = new TotalRevenueFileOutput();
     
+    private List<PaymentObserver> paymentObservers = new ArrayList<>();
+
+
 
     /**
      * Creates a payment for the particular instance.
@@ -39,7 +38,7 @@ public class Payment {
         return amountPaid;
     }
     public void completePayment(){
-        attachObserversToPayment(this);
+        
         notifyObservers();
      }
 
@@ -82,10 +81,6 @@ public class Payment {
     public void addPaymentObservers(List<PaymentObserver> observers) {
         paymentObservers.addAll(observers);
     }
-    private void attachObserversToPayment(Payment payment) {
-            addPaymentObserver(totalRevenueView);
-            addPaymentObserver(totalRevenueFileOutput);
-            
-        }
+
 }    
 

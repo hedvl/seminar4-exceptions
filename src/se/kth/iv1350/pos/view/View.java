@@ -5,6 +5,7 @@ package se.kth.iv1350.pos.view;
 import se.kth.iv1350.pos.controller.Controller;
 import se.kth.iv1350.pos.controller.OperationFailedException;
 import se.kth.iv1350.pos.model.ItemDTO;
+import se.kth.iv1350.pos.model.TotalRevenueFileOutput;
 import se.kth.iv1350.pos.integration.ItemNotFoundException;
 import se.kth.iv1350.pos.integration.InventoryDatabaseException;
 import se.kth.iv1350.pos.integration.ErrorLogger;
@@ -23,6 +24,14 @@ public class View {
      */
     public View(Controller contr) {
         this.contr = contr;
+        registerPaymentObservers();
+    }
+
+    private void registerPaymentObservers() {
+        TotalRevenueView totalRevenueView = new TotalRevenueView();
+        TotalRevenueFileOutput totalRevenueFileOutput = new TotalRevenueFileOutput();
+        contr.addPaymentObserver(totalRevenueFileOutput);
+        contr.addPaymentObserver(totalRevenueView);
     }
 
     /**

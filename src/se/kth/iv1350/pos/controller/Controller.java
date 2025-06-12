@@ -2,11 +2,11 @@ package se.kth.iv1350.pos.controller;
 
 import se.kth.iv1350.pos.model.*;
 import se.kth.iv1350.pos.view.TotalRevenueView;
-import se.kth.iv1350.pos.integration.*;
 
-import se.kth.iv1350.pos.integration.ItemNotFoundException;
-import se.kth.iv1350.pos.integration.InventoryDatabaseException;
-import se.kth.iv1350.pos.integration.ErrorLogger;
+import java.util.ArrayList;
+import java.util.List;
+
+import se.kth.iv1350.pos.integration.*;
 
 
 /**
@@ -19,7 +19,9 @@ public class Controller {
     private Register register = new Register();
     private Accounting accounting = new Accounting();
     private Receipt receipt;
-    private Payment payment; 
+    private Payment payment;
+    
+    private List<PaymentObserver> paymentObservers= new ArrayList<>(); 
    
 
 
@@ -73,6 +75,8 @@ public class Controller {
      */
     public Payment enterAmountPaid(double amountPaid) {
         payment = new Payment(amountPaid, sale.getTotalCost());
+
+        payment.addPaymentObservers(paymentObservers);
 
         updateExternalSystems(payment);
 
@@ -136,6 +140,10 @@ public class Controller {
 
     public boolean hasValidItems() {
         return sale.hasValidItems();
+    }
+
+    public void addPaymentObserver(PaymentObserver obs) {
+        paymentObservers.add(obs);
     }
 
 }
